@@ -56,6 +56,9 @@ export default {
           cream: "hsl(var(--cream))",
         },
         zomato: "hsl(var(--zomato-red))",
+        whatsapp: {
+          DEFAULT: "hsl(var(--whatsapp-green))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

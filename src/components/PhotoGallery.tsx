@@ -14,30 +14,30 @@ const photos = [
 
 const PhotoGallery = () => {
   return (
-    <section id="gallery" className="py-24 px-4 md:px-8">
+    <section id="gallery" className="py-16 md:py-24 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="section-title glow-text">Our Gallery</h2>
-        <p className="section-subtitle mb-16">
+        <h2 className="section-title glow-text text-3xl md:text-5xl">Our Gallery</h2>
+        <p className="section-subtitle text-base md:text-lg mb-12 md:mb-16">
           A glimpse into our kitchen and creations
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
           {photos.map((photo, index) => (
             <div
               key={index}
-              className={`photo-card group cursor-pointer ${
-                index === 1 ? "md:col-span-1 md:row-span-2" : ""
+              className={`photo-card group cursor-pointer relative overflow-hidden ${
+                index === 1 ? "row-span-2" : ""
               }`}
             >
               <img
                 src={photo.src}
                 alt={photo.alt}
-                className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                  index === 1 ? "aspect-auto md:h-full" : "aspect-square"
+                className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+                  index === 1 ? "h-full" : "aspect-square"
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="text-foreground font-medium">{photo.alt}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
+                <span className="text-foreground font-medium text-sm md:text-base">{photo.alt}</span>
               </div>
             </div>
           ))}
