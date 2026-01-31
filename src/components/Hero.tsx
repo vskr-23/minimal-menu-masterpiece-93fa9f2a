@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo-generated.png";
 import pizza1 from "@/assets/pizza-1.jpg";
 import pizza2 from "@/assets/pizza-2.jpg";
 import pizza3 from "@/assets/pizza-3.jpg";
+import { Button } from "@/components/ui/button";
 
 const slides = [pizza1, pizza2, pizza3];
 
-const Hero = () => {
+interface HeroProps {
+  onViewMenu: () => void;
+}
+
+const Hero = ({ onViewMenu }: HeroProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -17,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       {/* Sliding Background Images */}
       {slides.map((slide, index) => (
         <div
@@ -36,31 +40,38 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 animate-slide-up max-w-lg mx-auto">
-        <img
-          src={logo}
-          alt="Yummy! Bites"
-          className="w-36 sm:w-48 md:w-64 h-auto mx-auto drop-shadow-2xl mb-4 md:mb-6"
-        />
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-3 md:mb-4 glow-text leading-tight">
-          Yummy! Bites
+      <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 animate-slide-up max-w-4xl mx-auto">
+        <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold mb-3 sm:mb-4 md:mb-6 glow-text leading-tight">
+          Welcome to<br />Yummy! Bites
         </h1>
-        <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 tracking-wide mb-6 md:mb-8">
+        <p className="text-lg xs:text-xl sm:text-2xl md:text-3xl text-foreground/90 tracking-wide mb-3 sm:mb-4">
           Authentic Wood-Fired Pizzas
         </p>
+        <p className="text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto px-4">
+          Experience the perfect blend of Italian tradition and local flavors. Every pizza crafted with passion, baked to perfection.
+        </p>
 
-        {/* Zomato Badge */}
-        <a
-          href="https://zomato.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="badge-zomato hover:scale-105 transition-transform inline-flex text-sm md:text-base"
-        >
-          <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 4.5h1v3h-1v-3zm-4.25 5h9.5v1h-9.5v-1zm0 2.5h9.5v1h-9.5v-1zm1.5 2.5h6.5v1h-6.5v-1z" />
-          </svg>
-          Available on Zomato
-        </a>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4">
+          <Button
+            onClick={onViewMenu}
+            size="lg"
+            className="rounded-full px-6 sm:px-8 py-5 sm:py-6 text-base sm:text-lg font-semibold hover:scale-105 transition-transform w-full sm:w-auto"
+          >
+            Explore Our Menu
+          </Button>
+          
+          <a
+            href="https://zomato.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="badge-zomato hover:scale-105 transition-transform inline-flex text-sm md:text-base px-5 sm:px-6 py-2.5 sm:py-3 w-full sm:w-auto justify-center"
+          >
+            <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-.5 4.5h1v3h-1v-3zm-4.25 5h9.5v1h-9.5v-1zm0 2.5h9.5v1h-9.5v-1zm1.5 2.5h6.5v1h-6.5v-1z" />
+            </svg>
+            Order on Zomato
+          </a>
+        </div>
 
         {/* Slide Indicators */}
         <div className="flex justify-center gap-2 mt-10 md:mt-12">

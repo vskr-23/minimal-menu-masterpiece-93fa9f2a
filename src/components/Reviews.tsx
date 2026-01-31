@@ -4,20 +4,38 @@ const reviews = [
   {
     name: "Priya Sharma",
     rating: 5,
-    text: "Best pizza in Jalandhar! The crust is perfectly crispy and toppings are so fresh. My go-to place for family dinners.",
-    date: "2 weeks ago",
+    text: "Absolutely love this place! The wood-fired pizzas have an authentic taste you won't find elsewhere in Jalandhar. The crust is perfectly crispy with a slight char, and the toppings are incredibly fresh. This has become our family's go-to spot for weekend dinners!",
+    date: "1 week ago",
   },
   {
     name: "Rahul Gupta",
     rating: 5,
-    text: "Amazing paneer tikka pizza - a perfect fusion! The staff is super friendly and the ambiance is cozy.",
-    date: "1 month ago",
+    text: "The paneer tikka pizza is a game-changer - perfect fusion of Italian and Indian flavors! Staff is super friendly, ambiance is cozy, and the service is quick. Highly recommend trying their specialty pizzas.",
+    date: "2 weeks ago",
   },
   {
     name: "Anita Kaur",
     rating: 5,
-    text: "We ordered for a birthday party and everyone loved it. Quick delivery and the pizzas arrived hot!",
+    text: "Ordered for my daughter's birthday party and everyone was impressed! Pizzas arrived piping hot and perfectly packaged. The BBQ chicken pizza was a hit with the kids. Great quality at reasonable prices!",
     date: "3 weeks ago",
+  },
+  {
+    name: "Vikram Singh",
+    rating: 5,
+    text: "Best pizza experience in Punjab! The margherita is simple yet exceptional - you can taste the quality of ingredients. The restaurant has a warm atmosphere perfect for dates or family outings.",
+    date: "1 month ago",
+  },
+  {
+    name: "Neha Malhotra",
+    rating: 4,
+    text: "Great pizzas with generous toppings! The veggie supreme is loaded with fresh vegetables. Only wish they had more dessert options, but the pizza quality more than makes up for it.",
+    date: "2 months ago",
+  },
+  {
+    name: "Karan Mehta",
+    rating: 5,
+    text: "Their meat lovers pizza is incredible - perfect for non-veg enthusiasts! The cheese pull is amazing and the flavor combinations are spot on. Definitely worth the price.",
+    date: "1 month ago",
   },
 ];
 
@@ -30,12 +48,12 @@ const Reviews = () => {
           Loved by our customers
         </p>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {reviews.map((review, index) => (
             <div
               key={index}
               className="review-card animate-fade-in"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Stars */}
               <div className="flex gap-1 mb-3 md:mb-4">
@@ -76,8 +94,8 @@ const Reviews = () => {
                 <Star key={i} className="w-5 h-5 md:w-6 md:h-6 fill-primary text-primary" />
               ))}
             </div>
-            <span className="text-xl md:text-2xl font-bold text-foreground">4.8</span>
-            <span className="text-muted-foreground text-sm md:text-base">on Zomato</span>
+            <span className="text-xl md:text-2xl font-bold text-foreground">4.6</span>
+            <span className="text-muted-foreground text-sm md:text-base">on Zomato (580+ reviews)</span>
           </div>
         </div>
       </div>
